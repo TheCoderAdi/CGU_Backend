@@ -26,7 +26,7 @@ app.get("/gn", (req, res) => {
   const url = "https://cgu-odisha.ac.in/notices/";
   const scrapeGeneralNotification = async () => {
     try {
-      const { data } = await axios.get(url);
+      const { data } = axios.get(url);
       const $ = cheerio.load(data);
       const GeneralNotifications = [];
       for (let index = 1; index < 25; index++) {
